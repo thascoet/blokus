@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script/main.js" defer></script>
+    <title>Blokus</title>
+</head>
+
+<body>
+    <div id="boardContainer" class="onehundredpercent">
+        <div id="board" class="onehundredpercent"></div>
+        <div id="boardButtonsContainer" class="onehundredpercent">
+            <button id="boardButtonRotateClockwise" class="boardButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rotate-clockwise" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M4.05 11a8 8 0 1 1 .5 4m-.5 5v-5h5"></path>
+                </svg>
+            </button>
+            <button id="boardButtonRotateCounterclockwise" class="boardButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-rotate" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M19.95 11a8 8 0 1 0 -.5 4m.5 5v-5h-5"></path>
+                </svg>
+            </button>
+            <button id="boardButtonFlipHorizontal" class="boardButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flip-horizontal" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M3 12l18 0"></path>
+                    <path d="M7 16l10 0l-10 5l0 -5"></path>
+                    <path d="M7 8l10 0l-10 -5l0 5"></path>
+                </svg>
+            </button>
+            <button id="boardButtonFlipVertical" class="boardButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-flip-vertical" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M12 3l0 18"></path>
+                    <path d="M16 7l0 10l5 0l-5 -10"></path>
+                    <path d="M8 7l0 10l-5 0l5 -10"></path>
+                </svg>
+            </button>
+            <button id="boardButtonValidate" class="boardButton validateButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="24"
+                    height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <path d="M5 12l5 5l10 -10"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div id="piecesListContainer">
+        <div id="piecesListsHeader">
+            <div id="gameInfo">
+                <p id="currentPlayer">current player placeholder</p>
+                <p id="timer">timer placeholder</p>
+            </div>
+            <div id="piecesListsSelector">
+                <div id="piecesListsSelectorPlayersList">
+                    <p id="player1Name" class="playerName">Player 1 placeholder</p>
+                    <p id="player2Name" class="playerName">Player 2 placeholder</p>
+                    <p id="player3Name" class="playerName">Player 3 placeholder</p>
+                    <p id="player4Name" class="playerName">Player 4 placeholder</p>
+                </div>
+                <div id="piecesListsSelectUnitRemaining">
+                    <p id="unitRemaining">Unités restantes :
+                        <span id="unitRemainingNumber">
+                            unitsRemainingPlaceholder
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="piecesLists">
+            <div id="piecesListPlayer1" class="piecesList"></div>
+            <div id="piecesListPlayer2" class="piecesList"></div>
+            <div id="piecesListPlayer3" class="piecesList"></div>
+            <div id="piecesListPlayer4" class="piecesList"></div>
+        </div>
+    </div>
+    <p id="displayMessage" class="absolute">display message placeholder</p>
+    <div id="piecePicked" class="absolute"></div>
+</body>
+
+</html>
