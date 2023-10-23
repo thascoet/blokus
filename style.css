@@ -25,7 +25,18 @@ body {
 }
 
 #board {
-    display: grid;
+    display: grid;   
+}
+
+.boardUnit {
+
+}
+
+.boardUnitFill {
+
+}
+
+.boardUnitEmpty {
     
 }
 

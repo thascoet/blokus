@@ -1,0 +1,3 @@
+function generatePieceHtml(pieceIndex, color) {
+
+};
