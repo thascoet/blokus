@@ -16,6 +16,7 @@ const piecesListPlayer1HtmlElement = document.getElementById("piecesListPlayer1"
 const piecesListPlayer2HtmlElement = document.getElementById("piecesListPlayer2");
 const piecesListPlayer3HtmlElement = document.getElementById("piecesListPlayer3");
 const piecesListPlayer4HtmlElement = document.getElementById("piecesListPlayer4");
+const piecesPlayersListHtmlElement = [piecesListPlayer1HtmlElement, piecesListPlayer2HtmlElement, piecesListPlayer3HtmlElement, piecesListPlayer3HtmlElement]
 const displayMessageHtmlElement = document.getElementById("displayMessage");
 
 const piecePicked = {
@@ -28,4 +29,10 @@ const piecePngUrl = "./resource/piece.png";
 const boardX = 20;
 const boardY = 20;
 
+let playerNames = ["", "", "", ""];
+let playerColors = ["", "", "", ""];
+
 let board = Array(boardY).fill(0).map(() => Array(boardX).fill(0));
+
+initBoard();
+initWebSocket();

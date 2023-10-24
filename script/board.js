@@ -14,23 +14,3 @@ function initBoard() {
         boardHtmlElement.appendChild(boardCell);
     }
 }
-
-function updateBoard(board, colors) {
-
-    for (let i = 0; i < boardY; i++) {
-
-        for (let j = 0; j < boardX; j++) {
-
-            if (board[i][j] > 0) {
-
-                boardHtmlElement.children[i*boardY+j].style.backgroundColor = colors[(board[i][j] - 1) % 4];
-                boardHtmlElement.children[i*boardY+j].firstChild.backgroundImage = `url(${piecePngUrl})`;
-                
-            } else {
-
-                boardHtmlElement.children[i*boardY+j].style.backgroundColor = "transparent";
-                boardHtmlElement.children[i*boardY+j].firstChild.backgroundImage = "none";
-            }
-        }
-    }
-}

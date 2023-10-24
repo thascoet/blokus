@@ -25,19 +25,32 @@ body {
 }
 
 #board {
-    display: grid;   
+    display: grid;
 }
 
-.boardUnit {
-
+.boardCell {
+    width: 100%;
+    height: 100%;
 }
 
-.boardUnitFill {
-
+.boardCell div {
+    width: 100%;
+    height: 100%;
 }
 
-.boardUnitEmpty {
-    
+.boardCellFill div {
+    background-image: url(./resource/piece.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    mix-blend-mode: multiply;
+}
+
+.boardCellEmpty {
+    background-color: transparent;
+}
+
+.boardCellEmpty div {
+    background-image: none;
 }
 
 #boardButtonsContainer {
