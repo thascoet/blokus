@@ -5,10 +5,10 @@ function initBoard() {
     for (let i = 0; i < boardX * boardY; i++) {
 
         let boardCell = document.createElement("div");
-        boardCell.className = "boardCell";
+        boardCell.className = "pieceUnit";
 
         let boardCellOver = document.createElement("div");
-        boardCellOver.className = "boardCellOver";
+        boardCellOver.className = "pieceUnitOver";
 
         boardCell.appendChild(boardCellOver);
         boardHtmlElement.appendChild(boardCell);

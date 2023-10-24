@@ -3,9 +3,9 @@ function initWebSocket() {
 
     const socket = new WebSocket(webSocketURL);
 
-    socket.addEventListener("message", ({data: dataString}) => {
+    socket.addEventListener("message", (event) => {
 
-        let data = JSON.parse(dataString);
+        let data = JSON.parse(event.data);
 
         if (data?.type === undefined) console.error("Unkown message recieve");
         else if (data.type === "init") initGameStates(data);
@@ -48,9 +48,7 @@ function updateGamStates(data) {
         
         let boardUnitHtmlElement = boardHtmlElement.children[i*board.length + j];
 
-        console.log(board[i][j], "boardCell " + (board[i][j] > 0 ? "boardCellFill" : "boardCellEmpty"));
-
-        boardUnitHtmlElement.className = "boardCell " + (board[i][j] ? "boardCellFill" : "boardCellEmpty");
+        boardUnitHtmlElement.className = "pieceUnit " + (board[i][j] ? "pieceUnitFill" : "pieceUnitEmpty");
 
         if (board[i][j] > 0) boardUnitHtmlElement.style.backgroundColor = playerColors[board[i][j]-1];
     }}
@@ -59,9 +57,13 @@ function updateGamStates(data) {
 
     piecesPlayersListHtmlElement.forEach((piecesList) => piecesList.innerHTML = "");
 
-    for (let player=0; player<piecesList.length; player++) for(let pieceIndex=0; pieceIndex<piecesList[player].length; pieceIndex++) {
+    for (let player=0; player<piecesList.length; player++) for(let i=0; i<piecesList[player].length; i++) {
 
-        piecesPlayersListHtmlElement[player].appendChild(generatePieceHtml(pieceIndex, playerColors[player]))
+        let pieceHtmlElement = generatePieceHtml(piecesList[player][i], playerColors[player]);
+
+        pieceHtmlElement.addEventListener("click", onPieceClick(i, playerColors[player]));
+
+        piecesPlayersListHtmlElement[player].appendChild(pieceHtmlElement);
     }
 
     //update current player
